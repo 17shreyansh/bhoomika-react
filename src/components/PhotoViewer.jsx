@@ -43,7 +43,15 @@ export default function PhotoViewer({ item, onClose }) {
         CLOSE
       </button>
       <div className="vi">
-        {m.image ? <img src={m.image} alt={m.caption || "Memory"} /> : <div className="blank">PHOTO — add image in data/bhoomika.js</div>}
+        {m.image ? (
+          m.image.endsWith('.mp4') ? (
+            <video src={m.image} autoPlay loop muted playsInline controls />
+          ) : (
+            <img src={m.image} alt={m.caption || "Memory"} />
+          )
+        ) : (
+          <div className="blank">PHOTO — add image in data/bhoomika.js</div>
+        )}
       </div>
       <div className="vm">
         <span>{[m.date, m.location].filter(Boolean).join("  ·  ")}</span>

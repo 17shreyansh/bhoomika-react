@@ -54,7 +54,11 @@ export default function Photo({ m, n, cls = "", note = "", drag = false }) {
       <div className="fr">
         <div className="im">
           {m.image ? (
-            <img src={m.image} alt={m.caption || `Memory ${n}`} loading="lazy" style={{ "--fp": m.fp }} />
+            m.image.endsWith('.mp4') ? (
+              <video src={m.image} autoPlay loop muted playsInline style={{ "--fp": m.fp }} />
+            ) : (
+              <img src={m.image} alt={m.caption || `Memory ${n}`} loading="lazy" style={{ "--fp": m.fp }} />
+            )
           ) : (
             <div className="blank">
               PHOTO {String(n).padStart(2, "0")}
