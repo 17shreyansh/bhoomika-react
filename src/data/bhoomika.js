@@ -18,7 +18,7 @@ import khushiImg from "../assets/khusi.jpeg";
 import krishnaImg from "../assets/krishna.jpeg";
 
 const blank = () => ({ image: "", caption: "", date: "", location: "", fp: "50% 35%" });
-const createMem = (image, caption = "") => ({ image, caption, date: "", location: "", fp: "50% 35%" });
+const createMem = (image, caption = "", fit = "cover") => ({ image, caption, date: "", location: "", fp: "50% 50%", fit });
 
 export default {
   name: "Bhoomika",
@@ -42,7 +42,7 @@ export default {
     createMem(ph1, "Photo field 1"),
     createMem(ph2, "Photo field 2"),
     createMem(ph3, "Photo field 3"),
-    createMem(bhoomikaMain, "What stayed"),
+    createMem(bhoomikaMain, "What stayed", "contain"),
     createMem(fr1, "Fragment 1"),
     createMem(fr2, "Fragment 2"),
     createMem(fr3, "Fragment 3"),
@@ -75,13 +75,13 @@ export default {
 
   final: { 
     title: "Happy Birthday", 
-    image: bhoomikaMain, 
+    image: "", 
     fp: "50% 35%", 
     secret: "P.S. We still need to make that NASA-level plan work." 
   },
 
   music: { source: "", title: "SOUNDTRACK" },
 
-  assets: { introImage: bhoomikaMain, introVideo: "", paper: "", leak: "", dust: "" },
+  assets: { introImage: "", introVideo: "", paper: "", leak: "", dust: "" },
 };
 

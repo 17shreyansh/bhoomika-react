@@ -55,9 +55,9 @@ export default function Photo({ m, n, cls = "", note = "", drag = false }) {
         <div className="im">
           {m.image ? (
             m.image.endsWith('.mp4') ? (
-              <video src={m.image} autoPlay loop muted playsInline style={{ "--fp": m.fp }} />
+              <video src={m.image} autoPlay loop muted playsInline style={{ "--fp": m.fp, objectFit: m.fit || "cover" }} />
             ) : (
-              <img src={m.image} alt={m.caption || `Memory ${n}`} loading="lazy" style={{ "--fp": m.fp }} />
+              <img src={m.image} alt={m.caption || `Memory ${n}`} loading="lazy" style={{ "--fp": m.fp, objectFit: m.fit || "cover" }} />
             )
           ) : (
             <div className="blank">
